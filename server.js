@@ -8,6 +8,8 @@ app.set('port', (process.env.PORT || 3000));
 
 // setup our express application
 app.use(morgan('dev')); // log every request to the console.
+
+// parsers
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
