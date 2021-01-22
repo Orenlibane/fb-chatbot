@@ -19,7 +19,7 @@ module.exports = function processPostback(event) {
                 let bodyObject = JSON.parse(body);
                 console.log(bodyObject);
                 name = bodyObject.first_name;
-                greeting = "Hello " + name  + "and Oren. ";
+                greeting = "Hello " + name  + " and Oren. ";
             }
             let message = greeting + "Welcome to My First BOT.";
             let message2 = "Lets check the code out and try to understand it!"
