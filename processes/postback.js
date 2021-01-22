@@ -19,11 +19,11 @@ module.exports = function processPostback(event) {
                 let bodyObject = JSON.parse(body);
                 console.log(bodyObject);
                 name = bodyObject.first_name;
-                greeting = "Hello " + name  + ". ";
+                greeting = "Hello " + name  + "and Oren. ";
             }
-            let message = greeting + "Welcome to Healthbot. Hope you are       doing good today";
-            let message2 = "I am your nutrition tracker :-)"
-            let message3 = "please type in what you ate like: I ate chicken birayani and 2 chapatis with dal.";
+            let message = greeting + "Welcome to My First BOT.";
+            let message2 = "Lets check the code out and try to understand it!"
+            let message3 = "Next commit is on you :) .";
             senderAction(senderID);
             sendMessage(senderID, {text: message}).then(() => {
                 sendMessage(senderID, { text: message2 }).then(() => {
