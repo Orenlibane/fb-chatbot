@@ -7,7 +7,8 @@ module.exports = function processMessage(event) {
         const senderID = event.sender.id;
         if (message.text) {
             senderAction(senderID);
-            sendMessage(senderID, {text: navigator.userAgent})
+            const messageTest = `BLA BLA RESPONSE! + \n ${message.text}`
+            sendMessage(senderID, {text: messageTest})
             if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 sendMessage(senderID, {text: 'this is mobile'})
             } else {
@@ -26,8 +27,7 @@ module.exports = function processMessage(event) {
                     // make online Delivery - send Wolt?
                     break;
             }
-            const messageTest = `BLA BLA RESPONSE! + \n ${message.text}`
-            sendMessage(senderID, {text: messageTest})
+
         }
     }
 }
