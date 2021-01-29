@@ -1,4 +1,6 @@
 const request = require('request');
+const sendMessage = require('../templates/sendMessage');
+
 module.exports = function senderAction(recipientId){
     request({
         url: "https://graph.facebook.com/v2.6/me/messages",
@@ -11,6 +13,7 @@ module.exports = function senderAction(recipientId){
     }, function(error, response, body) {
         if (error) {
             console.log("Error sending message: " + response.error);
+            sendMessage(recipientId, {text: 'error in sender ACTION!'})
         }
     });
 }
