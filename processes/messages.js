@@ -13,21 +13,21 @@ module.exports = function processMessage(event) {
             // } else {
             //     sendMessage(senderID, {text: 'this is not mobile'})
             // }
-            switch (message.text) {
-                case '1':
-                    // send to tel
-                    // check if mobile device and give currect answer.
-                    window.open('tel:2344')
-                    break;
-                case '2':
-                    // show menu/send to menu Link
-                    break;
-                case '3':
-                    // make online Delivery - send Wolt?
-                    break;
-            }
-            const messageTest = `BLA BLA RESPONSE! + \n ${message.text}`
-            sendMessage(senderID, {text: messageTest})
+            // switch (message.text) {
+            //     case '1':
+            //         // send to tel
+            //         // check if mobile device and give currect answer.
+            //         window.open('tel:2344')
+            //         break;
+            //     case '2':
+            //         // show menu/send to menu Link
+            //         break;
+            //     case '3':
+            //         // make online Delivery - send Wolt?
+            //         break;
+            // }
+            // const messageTest = `BLA BLA RESPONSE! + \n ${message.text}`
+            // sendMessage(senderID, {text: messageTest})
         }
     }
 }
