@@ -7,11 +7,15 @@ module.exports = function processMessage(event) {
         const senderID = event.sender.id;
         if (message.text) {
             let messageTest = '';
-            // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            //     sendMessage(senderID, {text: 'this is mobile'})
-            // } else {
-            //     sendMessage(senderID, {text: 'this is not mobile'})
-            // }
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                sendMessage(senderID, {text: 'this is mobile'}).finally(() => {
+
+                })
+            } else {
+                sendMessage(senderID, {text: 'this is not mobile'}).finally(() => {
+
+                })
+            }
             switch (message.text) {
                 case '1':
                     // send to tel
@@ -19,7 +23,8 @@ module.exports = function processMessage(event) {
                     senderAction(senderID);
                     messageTest = `in switch case 1! + \n ${message.text}`
                     sendMessage(senderID, {text: messageTest}).then((res) => {
-                    window.open('tel:2344')
+
+                        window.open('tel:2344')
                     })
                     break;
                 case '2':
