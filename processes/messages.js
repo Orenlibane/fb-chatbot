@@ -26,9 +26,11 @@ module.exports = function processMessage(event) {
             request(options, function (error, response, body) {
                 if (error) throw new Error(error);
                 senderAction(senderID);
-                // after the response is recieved we will send the details in a Generic template
+                const messageTest = 'BLA BLA RESPONSE!'
+                sendMessage(senderID, {text: messageTest})
 
-                sendGenericTemplate(senderID,body);
+                // after the response is recieved we will send the details in a Generic template
+                // sendGenericTemplate(senderID,body);
             });
         }
     }

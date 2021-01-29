@@ -21,7 +21,9 @@ module.exports = function processPostback(event) {
                 let bodyObject = JSON.parse(body);
                 name = bodyObject.first_name;
                 greeting = "🍔🍔🍔🍔 Hello " + name + "! 🍔🍔🍔🍔";
-                menu = "What do you want to DO? 1) Call the resterunt \n 2) see the menu \n 3) make an online delivery"
+                menu = `What do you want to do? \n 1) Call the resterunt
+                                                \n 2) see the menu 
+                                                \n 3) make an online delivery`
                 callToAction = "How can i help you?";
 
             }
