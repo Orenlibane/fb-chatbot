@@ -13,25 +13,27 @@ module.exports = function processPostback(event) {
             method: "GET"
         }, function(error, response, body) {
             let greeting = '';
+            let callToAction = '';
+            let showMenu = '';
             if (error) {
                 console.error("Error getting user name: " + error);
             } else {
                 let bodyObject = JSON.parse(body);
-                console.log(bodyObject);
                 name = bodyObject.first_name;
-                greeting = "Hello " + name  + " and Oren. ";
+                greeting = "🍔🍔🍔🍔 Hello " + name + "! 🍔🍔🍔🍔";
+                menu = "What do you want to DO? 1) Call the resterunt \n 2) see the menu \n 3) make an online delivery"
+                callToAction = "How can i help you?";
+
             }
-            let message = greeting + "Welcome to My First BOT.";
-            let message2 = "Lets check the code out and try to understand it!"
-            let message3 = "Next commit is on you :) .";
+            let message = greeting;
+            let message2 = menu;
+            let message3 = callToAction;
             senderAction(senderID);
             sendMessage(senderID, {text: message}).then(() => {
                 sendMessage(senderID, { text: message2 }).then(() => {
-                    sendMessage(senderID, {  text: message3}).then(() => {
-                        sendMessage(senderID, { text: '🎈' });
+                    sendMessage(senderID, {  text: message3});
                     })
                 });
             });
-        });
     }
 }
