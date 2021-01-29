@@ -7,7 +7,7 @@ module.exports = function processMessage(event) {
         const senderID = event.sender.id;
         if (message.text) {
             senderAction(senderID);
-            const messageTest = `BLA BLA RESPONSE! + \n ${message.text}`
+            let messageTest = `BLA BLA RESPONSE! + \n ${message.text}`
             sendMessage(senderID, {text: messageTest})
             // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             //     sendMessage(senderID, {text: 'this is mobile'})
@@ -18,7 +18,10 @@ module.exports = function processMessage(event) {
                 case '1':
                     // send to tel
                     // check if mobile device and give currect answer.
-                    window.open('tel:2344')
+                    // window.open('tel:2344')
+                     messageTest = `in switch case 1! + \n ${message.text}`
+                    sendMessage(senderID, {text: messageTest})
+
                     break;
                 case '2':
                     // show menu/send to menu Link
