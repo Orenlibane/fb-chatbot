@@ -7,15 +7,6 @@ module.exports = function processMessage(event) {
         const senderID = event.sender.id;
         if (message.text) {
             let messageTest = '';
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                sendMessage(senderID, {text: 'this is mobile'}).finally(() => {
-
-                })
-            } else {
-                sendMessage(senderID, {text: 'this is not mobile'}).finally(() => {
-
-                })
-            }
             switch (message.text) {
                 case '1':
                     // send to tel
@@ -23,11 +14,25 @@ module.exports = function processMessage(event) {
                     senderAction(senderID);
                     messageTest = `in switch case 1! + \n ${message.text}`
                     sendMessage(senderID, {text: messageTest}).then((res) => {
-
                         window.open('tel:2344')
                     })
                     break;
                 case '2':
+                    sendMessage(senderID, {text: 'you clicked 2 to see the menu'}).then((res) => {
+                        if( navigator.userAgent.match(/Android/i)
+                            || navigator.userAgent.match(/webOS/i)
+                            || navigator.userAgent.match(/iPhone/i)
+                            || navigator.userAgent.match(/iPad/i)
+                            || navigator.userAgent.match(/iPod/i)
+                            || navigator.userAgent.match(/BlackBerry/i)
+                            || navigator.userAgent.match(/Windows Phone/i)) {
+                            sendMessage(senderID, {text: 'checking MOBILE'}).then((res) => {
+                            })
+                        } else {
+                            sendMessage(senderID, {text: 'not MOBILE'}).then((res) => {
+                            })
+                        }
+                    })
                     // show menu/send to menu Link
                     break;
                 case '3':
