@@ -5,8 +5,8 @@ module.exports = function processMessage(event) {
     if (!event.message.is_echo) {
         const message = event.message;
         const senderID = event.sender.id;
-        if (message.text) {
-            senderAction(senderID);
+        // if (message.text) {
+        //     senderAction(senderID);
             // sendMessage(senderID, {text: navigator.userAgent})
             // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             //     sendMessage(senderID, {text: 'this is mobile'})
@@ -29,7 +29,7 @@ module.exports = function processMessage(event) {
             // const messageTest = `BLA BLA RESPONSE! + \n ${message.text}`
             // sendMessage(senderID, {text: messageTest})
         }
-    }
+    // }
 }
 
 
