@@ -7,8 +7,12 @@ module.exports = function processMessage(event) {
         const senderID = event.sender.id;
         if (message.text) {
             senderAction(senderID);
-            sendMessage(senderID, {text: 'type of answer' + typeof message.text})
-            sendMessage(senderID, {text: navigator.userAgent})
+            // sendMessage(senderID, {text: navigator.userAgent})
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                sendMessage(senderID, {text: 'this is mobile'})
+            } else {
+                sendMessage(senderID, {text: 'this is not mobile'})
+            }
             switch (message.text) {
                 case '1':
                     // send to tel
@@ -27,3 +31,7 @@ module.exports = function processMessage(event) {
         }
     }
 }
+
+
+//     // true for mobile device
+//     document.write("mobile device");
