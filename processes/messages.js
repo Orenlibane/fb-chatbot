@@ -9,11 +9,11 @@ module.exports = function processMessage(event) {
             senderAction(senderID);
             const messageTest = `BLA BLA RESPONSE! + \n ${message.text}`
             sendMessage(senderID, {text: messageTest})
-            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                sendMessage(senderID, {text: 'this is mobile'})
-            } else {
-                sendMessage(senderID, {text: 'this is not mobile'})
-            }
+            // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            //     sendMessage(senderID, {text: 'this is mobile'})
+            // } else {
+            //     sendMessage(senderID, {text: 'this is not mobile'})
+            // }
             switch (message.text) {
                 case '1':
                     // send to tel
