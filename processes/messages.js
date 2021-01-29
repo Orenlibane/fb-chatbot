@@ -18,8 +18,9 @@ module.exports = function processMessage(event) {
                     // check if mobile device and give currect answer.
                     senderAction(senderID);
                     messageTest = `in switch case 1! + \n ${message.text}`
-                    sendMessage(senderID, {text: messageTest})
+                    sendMessage(senderID, {text: messageTest}).then((res) => {
                     window.open('tel:2344')
+                    })
                     break;
                 case '2':
                     // show menu/send to menu Link
