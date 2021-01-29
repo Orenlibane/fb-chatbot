@@ -8,11 +8,11 @@ module.exports = function processMessage(event) {
         if (message.text) {
             senderAction(senderID);
             // sendMessage(senderID, {text: navigator.userAgent})
-            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                sendMessage(senderID, {text: 'this is mobile'})
-            } else {
-                sendMessage(senderID, {text: 'this is not mobile'})
-            }
+            // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            //     sendMessage(senderID, {text: 'this is mobile'})
+            // } else {
+            //     sendMessage(senderID, {text: 'this is not mobile'})
+            // }
             switch (message.text) {
                 case '1':
                     // send to tel
